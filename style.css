@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap1');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#heading{
+    text-transform: uppercase;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: #fff;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 6px 7px 55px rgb(0 0 0 / 10%);
+}
+
+.section2{
+    display: none;
+}
+
+
+.container .left_side {
+    position: relative;
+    background: #003147;
+    padding: 40px;
+}
+
+.profileText {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profileText .imgBx {
+    position: relative;
+
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profileText .imgBx .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contactInfo {
+    padding-top: 40px;
+}
+
+.contactInfo li input{
+    padding-left: .5rem;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+}
+
+
+
+.contactInfo ul {
+    position: relative;
+}
+
+.contactInfo ul li {
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.contactInfo ul li .icon {
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+    color: #03a9f4;
+}
+
+.contactInfo education li {
+    margin-bottom: 15px;
+}
+
+
+.container .right_side {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+}
+
+.about {
+    margin-bottom: 50px;
+}
+
+.about :last-child {
+    margin-bottom: 0;
+}
+
+.title2 {
+    color: #003147;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+.title {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-size:19px;
+}
+.titleT{
+    color:black;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-size:19px;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+#nameField {
+    margin-top: 2rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+#dobField {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+#addressField {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.edButton{
+    margin-top: 1rem;
+}
+
+#skillField{
+    margin-top: 2.6rem;
+    margin-bottom: 1.7rem;
+    padding: 0 3rem;
+}
+
+
+
+/* Resume template */
+
+.my-dp {
+    width: 90px;
+    border-radius: 50%;
+}
+
+.container2 {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: #fff;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 6px 7px 55px rgb(0 0 0 / 10%);
+}
+
+.container2 .left_side {
+    position: relative;
+    background: #003147;
+    padding: 40px;
+}
+
+.contactInfo li p{
+    padding-left: .5rem;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+}
+.container2 .right_side {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+}
+
+
+
+.print_button {
+    margin-bottom: 1rem;
+    border: none;
+    outline: none;
+    background-color: #6456a3;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 8px 18px;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.24);
+    transform: translate(.3s, ease-in-out);
+}
+.print_button:active {
+    transform: translateY(2px);
+    background-color: #0d6efd;
+}
+
+.section2 .left_side .contactInfo #numT,#emailT,#githubT,#linkedT,#instaT{
+    color: whitesmoke;
+}
+
+
+.section2 .left_side .name,.dateh,.addressh{
+    color: whitesmoke;
+}
+.card-body1{
+    color: whitesmoke
+}

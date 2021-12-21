@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <section class="section1" id="section-form">
+        <div class="container">
+            <div class="left_side">
+                <div class="profileText">
+                    <div class="imgBx">
+                        <label for="dpField">
+                        <img src="./image/user.png" height="80px" width="80px" style="cursor: pointer;">
+                    </label>
+                    <input type="file" accept="image/*" class="form-control mt-1 name" id="dpField" style="display: none; visibility: none; " onchange="getImage(this.value);">
+
+                    <div id="display_img">
+                        
+                    </div>
+
+
+
+                    </div>
+                    <!-- <input type="file" accept="image/*" id="dpField"> -->
+                    <input type="text" placeholder="Name" id="nameField">
+                    <input type="date" max="2005-02-25"  id="dobField">
+                    <textarea maxlength="150" class="form-control" id="addressField"
+                                placeholder="Enter your Address" rows="3"></textarea>
+
+                    <!-- <input type="email" placeholder="xyz@gmail.com" id="emailField"> -->
+                </div>
+
+                <div class="contactInfo">
+                    <h3 class="title">Contact Info</h3>
+                    <ul>
+                        <li>
+                            <span class="icon"> <i class="fa fa-phone" aria-hidden="true"></i></span>
+                            <input type="number" placeholder="+9190089898989" id="numField">
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <span class="text"><input type="email" placeholder="XYZ@gmail.com" id="emailField"></span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-github" aria-hidden="true"></i></span>
+                            <span class="text"><input type="url" placeholder="www.github.com" id="githubField"></span>
+                        </li>
+                        <li>
+                            <span class="icon"> <i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                            <span class="text"><input type="url" placeholder="www.linkedin.com"
+                                    id="linkedinField"></span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                            <span class="text"><input type="url" placeholder="www.instagram.com" id="instaField"></span>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="contactInfo education">
+                    <h3 class="title">Education</h3>
+                    
+                            <div class="box" id="edu_container">
+                                <input class="form-control edField" placeholder="Education Qualification">
+
+                            <div class="edButton text-center" id="add_education">
+
+                                <a onclick="addEdButton()" class="btn btn-outline-primary ed_button mt-2"
+                                    role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                            </div>
+                            </div>
+                    
+
+                </div>
+
+                <div class="contactInfo language">
+                    <h3 class="title">Languages</h3>
+                    
+                            <div class="box" id="lang_container">
+                                <input class="form-control langField" placeholder="English">
+
+                            <div class="edButton text-center" id="add_lang">
+
+                                <a onclick="addlangButton()" class="btn btn-outline-primary ed_button mt-2"
+                                    role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                            </div>
+                            </div>
+                     
+                </div>
+
+
+            </div>
+            <div class="right_side">
+                <div class="about">
+                    <h2 class="title2">Profile</h2>
+                    <textarea maxlength="350" class="form-control" id="summaryField"
+                        placeholder="Tell us something about yourself" rows="5"></textarea>
+                </div>
+                <div class="about">
+                    <h2 class="title2">Work Experience</h2>
+                    <div class="box" id="work_container">
+                        <textarea maxlength="350" class="form-control workField" placeholder="Work experience"
+                            rows="5"></textarea>
+                        <div class="text-center mt-2" id="add_experience">
+                            <a onclick="addexperienceField()" class="btn btn-outline-danger works_button"
+                                role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about_skills">
+                    <h2 class="title2">Professional Skills</h2>
+                    <div class="box text-center" id="skill_container">
+                        <input type="text" placeholder="HTML" class="form-control skillField" style="text-align: center;">
+
+                        <div class="text-center mt-2" id="add_skills">
+                            <a onclick="addskillsField()" class="btn btn-outline-danger skills_button" role="button"><i
+                                    class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about_interest">
+                    <h2 class="title2">Hobbies</h2>
+                    <div class="box text-center" id="interest_container">
+                        <input type="text" placeholder="Hobbies" class="form-control interestField" style="text-align: center;">
+                        <div class="text-center mt-2" id="add_interest">
+                            <a onclick="addinterestField()" class="btn btn-outline-danger interest_button" role="button"><i
+                                    class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="text-center">
+                    <button class="btn btn-outline-primary" onclick="generateButton()"
+                        style="margin: 4rem  0 1rem 0; width: 80%;">Generate</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section2" id="section-template">
+        <div class="container2">
+            <!-- <h2 id="heading">Hello World</h2> -->
+
+            <div class="left_side">
+                <div class="profileText">
+                    <div class="imgBx">
+                        <img src="https://tse2.mm.bing.net/th?id=OIP.YpQ0oZGLK4k09k6sq354OwHaHx&pid=Api&P=0&w=300&h=300"
+                        class="img-fluid my-dp" id="dpT" alt="no-img-found">
+                    
+
+                  
+
+
+
+                    </div>
+                    <!-- <input type="file" accept="image/*" id="dpField"> -->
+                    <p class="name" id="nameT1">Dr. Namrata Chamling</p>
+                    <p class="dateh" id="dobT">23-04-2001</p>
+                    <p class="addressh" id="addressT" style="font-weight: 500;">25, Siddharth Apartments, Bandra</p>
+
+
+                    <!-- <input type="email" placeholder="xyz@gmail.com" id="emailField"> -->
+                </div>
+
+                <div class="contactInfo">
+                    <h3 class="titleT">Contact Info</h3>
+                    <ul>
+                        <li>
+                            <span class="icon"> <i class="fa fa-phone" aria-hidden="true"></i></span>
+                            <p id="numT" style="font-weight: 500;">+91-9874864648, +91-7987848986</p>
+
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <p id="emailT" style="font-weight: 500;">abhatta@shakya.com.np</p>
+
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-github" aria-hidden="true"></i></span>
+                            <p id="githubT"><a href="#">https://www.github.com</a></p>
+
+                        </li>
+                        <li>
+                            <span class="icon"> <i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                            <p id="linkedT"><a href="#">https://www.linkedin.com</a></p>
+
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                            <p id="instaT"><a href="#">https://www.instagram.com</a></p>
+
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="contactInfo education">
+                    <h3 class="titleT">Education</h3>
+                    
+                    <div class="card-body1" id="eduT">
+                    <ul id="eqT">
+                        <li >Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                        <li >Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                        <li >Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                        <li >Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                    </ul>
+                </div>
+                    
+
+                </div>
+
+                <div class="contactInfo language">
+                    <h3 class="titleT">Languages</h3>
+                            <div class="card-body1 cd-b" id="langT">
+
+                                        <li>Lorem, ipsum.</li>
+                                        <li>Lorem, ipsum.</li>
+                                        <li>Lorem, ipsum.</li>
+                                        <li>Lorem, ipsum.</li>
+                                        <li>Lorem, ipsum.</li>
+                                        <li>Lorem, ipsum.</li>
+                                        <li>Lorem, ipsum.</li>
+                                    
+                                </div>
+                     
+                </div>
+
+
+            </div>
+            <div class="right_side">
+                <div class="about">
+                    <h2 class="title2">Profile</h2>
+                    <div class="card-body">
+                        <p id="summaryT">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum facilis
+                            dolores, adipisci
+                            cumque sunt, rem doloremque expedita exercitationem accusantium, ab soluta inventore
+                            possimus magni. In laborum excepturi aut consequatur, consequuntur fugit distinctio quis
+                            aliquid voluptate reprehenderit incidunt, dolores numquam?</p>
+                    </div>
+                </div>
+                <div class="about">
+                    <h2 class="title2">Work Experience</h2>
+                    
+                        <div class="card-body" id="weT">
+                            <strong>ipsum dolor sit amet consectetur adipisicing elit.</strong> <br> Quam corrupti
+                            reiciendis, ullam minima nihil mollitia quibusdam magnam, aliquam nulla blanditiis molestiae
+                            et optio eligendi provident dolorum fugiat<br> <strong> nisi rerum voluptatem</strong> <br>
+                            Id harum maiores aspernatur, laboriosam, voluptatum quibusdam voluptates adipisci sed vitae
+                            rem pariatur quidem, minus sequi sit? Impedit aperiam porro ex quod facilis eligendi modi,
+                            obcaecati placeat atque dolores debitis est enim tenetur cupiditate animi illo, sit beatae
+                            totam fugit
+                        </div>
+                    
+                </div>
+
+                <div class="about_skills">
+                    <h2 class="title2">Professional Skills</h2>
+                    <div class="card-body cd-b" id="skillT">
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>Dart</li>
+                        <li>Kotlin</li>
+                        <li>C++</li>
+                        <li>Java</li>
+                    </div>
+                </div>
+
+                <div class="about_interest">
+                    <h2 class="title2">Hobbies</h2>
+                    <div class="card-body cd-b" id="hobbiesT">
+                        <ul>
+                            <li>Coding</li>
+                            <li>Playing</li>
+                            <li>Reading</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- <div class="text-center">
+                    <button class="btn btn-outline-primary" onclick="generateButton()"
+                        style="margin: 4rem  0 1rem 0; width: 80%;">Generate</button>
+                </div>  -->
+
+               <div class="text-center ">
+                    <button type="button" onclick="print_resume()" class="print_button" role="button">Print
+                        Resume</button>
+                 </div>  
+
+            </div>
+
+            </div>
+    </section>
+    <script src="./main.js"></script>
+</body>
+
+</html>
